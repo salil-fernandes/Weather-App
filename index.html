@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Weather App</title>
+        <link rel="stylesheet" href="index.css">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <!-- Hamburger Menu -->
+        <section class="top-nav">
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button' style="right: 50px; top: 50px;"></div>
+          </label>
+            <ul class="menu">
+                <li><a href="index.html">Home(Weather Checker)</a></li>
+                <li><a href="what_is_weather.html">What is Weather?</a></li>
+                <li><a href="weather_conditions.html">Weather Conditions</a></li>
+            </ul>
+        </section>
+
+        <!-- Weather Data -->
+        <div class="input_card">
+            <div class="search_box">
+                <input type="text" placeholder="Enter a city name" spellcheck="false">
+                <button><img src="images/search.png"></button>
+            </div>
+            <div class="weather">
+                <img src="images/smiley.png" class="weather-icon">
+                <h1 class="temperature">No Data</h1>
+                <h3 class="city">No Data</h3>
+                <h3 class="weather_type">No Data</h3>
+                <div class="weather_details">
+                    <div class="weather_data">
+                        <img src="images/humidity.png">
+                        <div>
+                            <p class="humidity">No Data</p>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="weather_data">
+                        <img src="images/wind.png">
+                        <div>
+                            <p class="wind">No Data</p>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        /* these next 2 functions are only to get the weather data of the user's current location when the site is first opened
+        if the user allows the browser location access */
+        getLocation();
+
+        /* logic in main.js */
+        const searchBox = document.querySelector(".search_box input");
+        const searchBtn = document.querySelector(".search_box button");
+            
+        searchBtn.addEventListener("click", () => {
+            fetchWeatherData(searchBox.value);
+        })
+        </script>
+    </body>
+</html>

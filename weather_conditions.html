@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Weather App</title>
+        <link rel="stylesheet" href="weather_conditions.css">
+        <!-- <script src="main.js"></script> -->
+    </head>
+    <body>
+        <!-- Hamburger Menu -->
+        <section class="top-nav">
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button' style="right: 50px; top: 50px;"></div>
+          </label>
+            <ul class="menu">
+                <li><a href="index.html">Home(Weather Checker)</a></li>
+                <li><a href="what_is_weather.html">What is Weather?</a></li>
+                <li><a href="weather_conditions.html">Weather Conditions</a></li>
+            </ul>
+        </section>
+
+        <h1>Types of Weather Conditions</h1>
+        <div class="description">
+            <p>
+                Put the mouse cursor over an image and see the magic. The images will magnify and move out of the grayscale to become coloured.
+                Don't forget to scroll through the images using either the buttons or mouse wheel.
+            </p>
+        </div>
+        <div class="gallery-wrap">
+            <img src="images/weatherconditions/back.png" id="backBtn">
+            <div class="gallery">
+                <div>
+                    
+                    <span><figure><img src="images/weatherconditions/rain.png"><figcaption>Monsoon - The wet season is the time of year when most of a region's average annual rainfall occurs. Generally, the season lasts at least a month.</figcaption></figure></span>
+                    <span><figure><img src="images/weatherconditions/thunderstorm.png"><figcaption>Thunderstorm - A thunderstorm, also known as an electrical storm or a lightning storm, is a storm characterized by the presence of lightning and its acoustic effect on the Earth's atmosphere, known as thunder.</figcaption></figure></span>
+                    <span><figure><img src="images/weatherconditions/tornado.png"><figcaption>Tornado - A tornado is a violently rotating column of air that is in contact with both the surface of the Earth and a cumulonimbus cloud or, in rare cases, the base of a cumulus cloud.</figcaption></figure></span>
+                </div>
+                <div>
+                    <span><figure><img src="images/weatherconditions/fog.png"><figcaption>Fog - Fog is a visible aerosol consisting of tiny water droplets or ice crystals suspended in the air at or near the Earth's surface.</figcaption></figure></span>
+                    <span><figure><img src="images/weatherconditions/blizzard.png"><figcaption>Blizzard - A blizzard is a severe snowstorm characterized by strong sustained winds and low visibility, lasting for a prolonged period of time.</figcaption></figure></span>
+                    <span><figure><img src="images/weatherconditions/cloudy.png"><figcaption>Cloudy - When the sky is cloudy, it's so full of clouds that you can't see the sun. Clouds indicate either that rain is on the way or they could just be hiding the sun.</figcaption></figure></span>
+                </div>
+                <div>
+                    <span><figure><img src="images/weatherconditions/cyclone.png"><figcaption>Cyclone - A cyclone is a large air mass that rotates around a strong center of low atmospheric pressure, counterclockwise in the Northern Hemisphere and clockwise in the Southern Hemisphere as viewed from above.</figcaption></figure></span>
+                    <span><figure><img src="images/weatherconditions/drought.png"><figcaption>Drought - A drought is a period of drier-than-normal conditions. A drought can last for days, months or years.</figcaption></figure></span>
+                    <span><figure><img src="images/weatherconditions/hail.png"><figcaption>Hail Storm - Hail is a form of solid precipitation. It consists of balls or irregular lumps of ice, each of which is called a hailstone.</figcaption></figure></span>
+                </div>
+            </div>
+            <img src="images/weatherconditions/next.png" id="nextBtn">
+        </div>
+        
+        <script>
+            let scrollContainer = document.querySelector(".gallery");
+            let backBTN = document.querySelector("#backBtn");
+            let nextBTN = document.querySelector("#nextBtn");
+
+            /* when the cursor is over an image, if you scroll the mousewheel, the images will slide left or right */
+            scrollContainer.addEventListener("wheel", (event) => {
+                event.preventDefault();
+                scrollContainer.scrollLeft += event.deltaY;
+                scrollContainer.style.scrollBehaviour = "auto";
+            });
+
+            /* incoorporating a clicking function */
+            nextBTN.addEventListener("click", () => {
+                scrollContainer.style.scrollBehaviour = "smooth";
+                scrollContainer.scrollLeft += 200;
+            });
+
+            backBTN.addEventListener("click", () => {
+                scrollContainer.style.scrollBehaviour = "smooth";
+                scrollContainer.scrollLeft -= 200;
+            });
+        </script>
+    </body>
+</html>

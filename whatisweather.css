@@ -1,0 +1,207 @@
+@font-face {
+    font-family: millenia;
+    src: url(/fonts/millenia.ttf);
+}
+
+@font-face {
+    font-family: candara;
+    src: url(/fonts/candara.ttf);
+}
+
+body{
+    background: #25116B;
+}
+
+h1{
+    font-family: millenia;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    text-shadow: 5px 5px 10px #D74BE8;
+    position: absolute;
+    top: 35px;
+    left: 450px;
+}
+
+p{
+    font-family: candara;
+    text-align: justify;
+    color: white;
+    font-size: 20px;
+}
+
+.para{
+    width: 45%;
+    position: absolute;
+    top: 160px;
+}
+
+.pic{
+    position: absolute;
+    right: 20px;
+    top: 230px;
+}
+
+.pic img{
+    width: 65%;
+    height: 65%;
+}
+
+.link{
+    position: absolute;
+    top: 550px;
+}
+.link a{
+    color: aquamarine;
+    font-style: italic;
+}
+
+ul{
+    font-family: candara;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    list-style: none;
+    content: "\00BB"; /* Unicode for >> character */
+}
+
+
+
+
+
+
+
+
+
+/* CSS for the hamburger style dropdown menu */
+
+h2 {
+    vertical-align: center;
+    text-align: center;
+  }
+  
+  .top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFF;
+    height: 50px;
+    padding: 1em;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu > li {
+    margin: 0 1rem;
+    overflow: hidden;
+  }
+  
+  .menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+
+  a{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  a:hover{
+    color: orange;
+  }
+  
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+  
+  .menu-button::before {
+    content: '';
+    margin-top: -8px;
+  }
+  
+  .menu-button::after {
+    content: '';
+    margin-top: 8px;
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+  
+  @media (max-width: 900000000000000000px) {
+    .menu-button-container {
+      display: flex;
+    }
+    .menu {
+      position: absolute;
+      top: 0;
+      margin-top: 80px;
+      right: 55px;
+      flex-direction: column;
+      width: 15%;
+      justify-content: center;
+      align-items: center;
+    }
+    #menu-toggle ~ .menu li {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .menu li {
+      border: 1px solid white;
+      border-radius: 10px;
+      height: 1em;
+      padding: 0.5em;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu > li {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.5em 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+    }
+    .menu > li:not(:last-child) {
+      border-bottom: 1px solid #444;
+    }
+  }
+
